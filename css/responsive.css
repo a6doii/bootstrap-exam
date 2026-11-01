@@ -1,0 +1,114 @@
+/* =========================================================
+   EliteHomes - responsive overrides (mobile-first)
+   Breakpoints match the reference site:
+   640px (sm) · 768px (md) · 1024px (lg) · 1280px (xl) · 1536px (2xl)
+   Bootstrap's own breakpoints (576/992/1200/1400) differ, so the
+   container widths are reset here to the reference values.
+   ========================================================= */
+
+/* ---------- ≥ 640px ---------- */
+@media (min-width: 640px) {
+  .container { max-width: 640px; }
+}
+
+/* ---------- ≥ 768px ---------- */
+@media (min-width: 768px) {
+  .container { max-width: 768px; }
+
+  /* Section titles */
+  .section-title {
+    font-size: 2.25rem;
+    line-height: calc(2.5 / 2.25);
+  }
+
+  /* Testimonials: side padding for arrows, row layout for the author */
+  .testimonials { padding-inline: 5rem; }
+  .testimonials__arrow {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .testimonial-card__author {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  /* Contact */
+  .contact-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .form-card { padding: 2.5rem; }
+
+  /* Footer */
+  .site-footer__top { flex-direction: row; }
+  .site-footer__copy { text-align: left; }
+}
+
+/* ---------- ≥ 1024px ---------- */
+@media (min-width: 1024px) {
+  .container { max-width: 1024px; }
+
+  /* Header: desktop nav replaces the burger + mobile menu */
+  .main-nav { display: flex; }
+  .menu-toggle,
+  .mobile-menu { display: none !important; }
+
+  /* Mega menu is scaled down and re-centred on small laptops */
+  .mega-menu {
+    top: 25%;
+    translate: -50% 0;
+    scale: .9;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 5rem;
+    padding-bottom: 0;
+  }
+
+  .hero__title {
+    font-size: 3.75rem;
+    line-height: 1.25;
+  }
+
+  .search-box__row--primary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .search-box__location { grid-column: span 2 / span 2; }
+  .search-box__row--secondary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  /* Section titles */
+  .section-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  /* Featured properties */
+  .property-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  /* Services */
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* Contact */
+  .contact__decor { display: block; }
+  .contact-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .contact-main { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .contact-side { grid-column: span 1 / span 1; }
+  .contact-form-col { grid-column: span 2 / span 2; }
+}
+
+/* ---------- ≥ 1280px ---------- */
+@media (min-width: 1280px) {
+  .container { max-width: 1280px; }
+
+  .mega-menu {
+    top: 130%;
+    translate: -60% 0;
+    scale: none;
+  }
+}
+
+/* ---------- ≥ 1536px ---------- */
+@media (min-width: 1536px) {
+  .container { max-width: 1536px; }
+
+  .mega-menu { translate: -66.6667% 0; }
+}
